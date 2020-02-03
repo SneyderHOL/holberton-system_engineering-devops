@@ -1,4 +1,5 @@
-# Describing each spcrit
+# Project 0x03-shell_variables_expansion
+# Describing each script
 0-alias is a script that will create an alias.
 
 1-hello_you is a script that will print hello user, where user is the current Linux user.
