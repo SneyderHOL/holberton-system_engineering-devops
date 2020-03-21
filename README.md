@@ -6,6 +6,6 @@ Shell Basics Projects
 
 0x01 Shell, permissions - Permissions, Other Man Pages.
 
-0x02 Shell, I/0 Redirections and filters - Shell, I/O Redirection, Special Characters, Other Man Pages.
+0x02 Shell, I/O Redirections and filters - Shell, I/O Redirection, Special Characters, Other Man Pages.
 
 0x03 Shell, init files, variables and expansions - Shell Initialization Files, Variables, Expansions, Shell Arithmetic, The alias Command, Other help pages.
