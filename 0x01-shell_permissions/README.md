@@ -1,4 +1,9 @@
-# Describing each script
+# 0x01 Shell, permissions Project
+
+Permissions, Other Man Pages.
+
+Describing each script:
+
 0-iam_betty is a script that will changes the user ID to betty.
 
 1-who_am_i is a script that will print the effective userid of the current user.

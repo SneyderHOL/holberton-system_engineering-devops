@@ -1,4 +1,9 @@
-# Describing each script
+# 0x00 Shell, basics Project
+
+What is the Shell, Navigation, Looking Around, Manipulating Files, Working with Commands, Reading Man Pages, Keyboard Shortcuts for Bash, LTS.
+
+Describing each script:
+
 0-current_working_directory is a script that will print the absolute path name of the current working directory.
 
 1-listit is a script that will display the contents list of your current directory.

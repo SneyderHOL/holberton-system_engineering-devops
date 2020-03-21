@@ -1,4 +1,9 @@
-# Describing each scipt
+# 0x02 Shell, I/0 Redirections and filters Project
+
+Shell, I/O Redirection, Special Characters, Other Man Pages.
+
+Describing each script:
+
 0-hello_world is a script that will print “Hello, World”, followed by a new line to the standard output.
 
 1-confused_smiley is a script that will displays a confused smiley "(Ôo)'.
