@@ -37,3 +37,7 @@ Describing each script:
 15-symbolic_link_permissions is a script that will change the owner and the group owner of the file _hello to betty and holberton respectively.
 
 16-if_only is a script that will change the owner of the file hello to betty only if it is owned by the user guillaume.
+
+100-Star_Wars is a script that will play the StarWars IV episode in the terminal.
+
+101-man_holberton is a man page.

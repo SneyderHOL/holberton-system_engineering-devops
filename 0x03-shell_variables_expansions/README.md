@@ -33,3 +33,9 @@ Describing each script:
 13-print_float is a script that will print a number with two decimal places.
 
 14-decimal_to_hexadecimal is a script that will convert a number from base 10 to base 16.
+
+100-rot13 is a script that encodes and decodes text using the rot13 encryption.
+
+101-odd is a script that prints every other line from the input, starting with the first line.
+
+102-water_and_stir is a script that adds the two numbers stored in the environment variables WATER and STIR and prints the result.

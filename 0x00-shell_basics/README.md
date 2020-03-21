@@ -41,3 +41,5 @@ Describing each script:
 17-tree is a script that will create the directories welcome/, welcome/to/ and welcome/to/holberton in the current directory.
 
 18-commas is a script that will list all the files and direcotries of the current directory, separated by commas.
+
+holberton.mgc is a magic file, that can be used with the command file to detect Holberton data files. Holberton data files always contain the string HOLBERTON at offset 0.
