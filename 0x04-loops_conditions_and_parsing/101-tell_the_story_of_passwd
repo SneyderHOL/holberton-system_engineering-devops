@@ -7,15 +7,8 @@ else
     if [ -f "$FILENAME" ]; then
 	if [ -s "$FILENAME" ]; then
 	    if [ -r "$FILENAME" ]; then
-		while read -r line
+		while IFS=: read -r USERNAME GROUP_ID HOME_DIRECTORY COMMAND USER_ID PASSWORD USER_ID_INFO
 		do
-		    USERNAME="$(echo "$line" | cut -d ":" -f 1)"
-		    GROUP_ID="$(echo "$line" | cut -d ":" -f 4)"
-		    HOME_DIRECTORY="$(echo "$line" | cut -d ":" -f 6)"
-		    COMMAND="$(echo "$line" | cut -d ":" -f 7)"
-		    USER_ID="$(echo "$line" | cut -d ":" -f 3)"
-		    PASSWORD="$(echo "$line" | cut -d ":" -f 2)"
-		    USER_ID_INFO="$(echo "$line" | cut -d ":" -f 5)"
 		    echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND. $USER_ID's place is protected by the passcode $PASSWORD, more info about the user here: $USER_ID_INFO"
 		done < "$FILENAME"
 	    fi
