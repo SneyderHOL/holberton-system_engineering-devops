@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Bash script that groups visitors by IP and HTTP status code, and displays this data.
+FILENAME="$(pwd)/apache-access.log"
+if [ ! -e "$FILENAME" ]; then
+    echo "$FILENAME file does not exist"
+else
+    if [ -f "$FILENAME" ]; then
+	if [ -s "$FILENAME" ]; then
+	    if [ -r "$FILENAME" ]; then
+		awk '{print $1,$9}' "$FILENAME" | sort | uniq -c | sort -rn
+	    fi
+	fi
+    fi
+fi
