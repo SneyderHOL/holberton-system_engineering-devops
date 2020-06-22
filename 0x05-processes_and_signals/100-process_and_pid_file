@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Creates the file /var/run/holbertonscript.pid containing its PID
+#Displays To infinity and beyond indefinitely
+#Displays I hate the kill command when receiving a SIGTERM signal
+#Displays Y U no love me?! when receiving a SIGINT signal
+#Deletes the file /var/run/holbertonscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
+i=0
+filename="/var/run/holbertonscript.pid"
+pgrep -f ./100-process_and_pid_file > "$filename"
+trap 'echo I hate the kill command; rm "$filename"; exit' SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap 'rm "$filename"; exit' SIGQUIT
+while [ $i -eq 0 ]; do
+    echo "To infinity and beyond"
+    sleep 2
+done
