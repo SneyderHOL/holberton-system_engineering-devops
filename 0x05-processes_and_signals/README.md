@@ -1,83 +1,72 @@
 # Project 0x05 Processes and signals
 
-Shell, I/O Redirection, Special Characters, Other Man Pages.
+Bash Scripts using Process and Signals.
 
 Concepts:
-Shell, I/O Redirection
 
-    What do the commands head, tail, find, wc, sort, uniq, grep, tr do
-    How to redirect standard output to a file
-    How to get standard input from a file instead of the keyboard
-    How to send the output from one program to the input of another program
-    How to combine commands and filters with redirections
-
-Special Characters
-
-    What are special characters
-    Understand what do the white spaces, single quotes, double quotes, backslash, comment, pipe, command separator, tilde and how and when to use them
-
-Other Man Pages
-
-    How to display a line of text
-    How to concatenate files and print on the standard output
-    How to reverse a string
-    How to remove sections from each line of files
-    What is the /etc/passwd file and what is its format
-    What is the /etc/shadow file and what is its format
+    What is a PID
+    What is a process
+    How to find a process’ PID
+    How to kill a process
+    What is a signal
+    What are the 2 signals that cannot be ignored
 
 
 Describing each script:
 
-0-hello_world is a script that will print “Hello, World”, followed by a new line to the standard output.
+0-what-is-my-pid is a Bash script that displays its own PID.
 
-1-confused_smiley is a script that will displays a confused smiley "(Ôo)'.
+1-list_your_processes is a Bash script that displays a list of currently running processes.
 
-2-hellofile is a script that will display the content of the /etc/passwd file.
+2-show_your_bash_pid is a Bash script that displays lines containing the bash word, thus allowing you to easily get the PID of your Bash process.
 
-3-twofiles is a sceript that will display the content of /etc/passwd and /etc/hosts
+3-show_your_bash_pid_made_easy is a Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.
 
-4-lastlines is a script that will display the last 10 lines of /etc/passwd
+4-to_infinity_and_beyond is a Bash script that displays To infinity and beyond indefinitely.
 
-5-firstlines is a script that will display the first 10 lines of /etc/passwd
+5-kill_me_now is a Bash script that kills 4-to_infinity_and_beyond process.
 
-6-third_line is a script that will display the third line of the file iacta.
+6-kill_me_now_made_easy is a Bash script that kills 4-to_infinity_and_beyond process.
 
-7-file is a script that will create a file named exactly \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:) containing the text Holberton School ending by a new line.
+7-highlander is a Bash script that displays:
 
-8-cwd_state is a script that will write into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist, create it.
+    To infinity and beyond indefinitely
+    With a sleep 2 in between each iteration
+    I am invincible!!! when receiving a SIGTERM signal
 
-9-duplicate_last_line is a script that will duplicate the last line of the file iacta
+Make a copy of your 6-kill_me_now_made_easy script, name it 67-kill_me_now_made_easy, that kills the 7-highlander process instead of the 4-to_infinity_and_beyond one.
 
-10-no_more_js is a script that will delete all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+8-beheaded_process is a Bash script that kills the process 7-highlander.
 
-11-directories is a script that will count the number of directories and sub-directories in the current directory.
+100-process_and_pid_file is a Bash script that:
 
-12-newest_files is a script that will display the 10 newest files in the current directory.
+    Creates the file /var/run/holbertonscript.pid containing its PID
+    Displays To infinity and beyond indefinitely
+    Displays I hate the kill command when receiving a SIGTERM signal
+    Displays Y U no love me?! when receiving a SIGINT signal
+    Deletes the file /var/run/holbertonscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
 
-13-unique is a script that will take a list of words as input and prints only words that appear exactly once.
+101-manage_my_process is a Bash (init) script that manages manage_my_process.
 
-14-findthatword is a script that will display lines containing the pattern “root” from the file /etc/passwd
+    When passing the argument start:
+        Starts manage_my_process
+        Creates a file containing its PID in /var/run/my_process.pid
+        Displays manage_my_process started
+    When passing the argument stop:
+        Stops manage_my_process
+        Deletes the file /var/run/my_process.pid
+        Displays manage_my_process stopped
+    When passing the argument restart
+        Stops manage_my_process
+        Deletes the file /var/run/my_process.pid
+        Starts manage_my_process
+        Creates a file containing its PID in /var/run/my_process.pid
+        Displays manage_my_process restarted
+    Displays Usage: manage_my_process {start|stop|restart} if any other argument or no argument is passed
 
-15-countthatword is a script that will display the number of lines that contain the pattern “bin” in the file /etc/passwd
+manage_my_process is a Bash script that:
 
-16-whatsnext is a script that will display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
+    Indefinitely writes I am alive! to the file /tmp/my_process
+    In between every I am alive! message, the program should pause for 2 seconds
 
-17-hidethisword is a script that will display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
-
-18-letteronly is a script that will display all lines of the file /etc/ssh/sshd_config starting with a letter.
-
-19-AZ is a script that will replace all characters A and c from input to Z and e respectively.
-
-20-hiago is a script that will create a script that removes all letters c and C from input.
-
-21-reverse is a script that will reverse its input.
-
-22-users_and_homes is a script that will display all users and their home directories, sorted by users.
-
-100-empty_casks is a script that finds all empty files and directories in the current directory and all sub-directories.
-
-101-gifs is a script that list all the files with a .gif extension in the current directory and all its sub-directories.
-
-102-acrostic is a script that decodes acrostics that use the first letter of each line.
-
-103-the_biggest_fan is a script that parses web servers logs in a TSV format as input and displays the 11 hosts which did the most requests.
+102-zombie.c is a C program that creates 5 zombies processes.
