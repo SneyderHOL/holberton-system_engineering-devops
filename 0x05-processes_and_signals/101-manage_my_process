@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#Bash script that manages manage_my_process.
+FILENAME="manage_my_process"
+PID_INFO="/var/run/my_process.pid"
+print_msg() {
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit    
+}
+
+if [ $# -ne 1 ]; then
+    print_msg
+fi
+if [ "$1" == "start" ]; then
+    "./$FILENAME" &
+    pgrep -f "./$FILENAME" > "$PID_INFO"
+    echo "$FILENAME started"
+elif [ "$1" == "stop" ]; then
+    pkill -f "./$FILENAME"
+    rm "$PID_INFO"
+    echo "$FILENAME stopped"
+elif [ "$1" == "restart" ]; then
+    pkill -f "./$FILENAME"
+    rm "$PID_INFO"
+    "./$FILENAME" &
+    pgrep -f "./$FILENAME" > "$PID_INFO"
+    echo "$FILENAME restarted"
+else
+    print_msg
+fi
