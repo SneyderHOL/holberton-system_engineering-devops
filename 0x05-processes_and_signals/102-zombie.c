@@ -23,37 +23,23 @@ int infinite_while(void)
  */
 int main(void)
 {
-	pid_t child, pid;
+	pid_t pid;
 	int i = 0;
 
-	pid = fork();
-	if (pid == -1)
+	for (i = 0; i < 5; i++)
 	{
-		perror("Error creating parent");
-		return (1);
-	}
-	if (pid == 0)
-	{
-		for (i = 0; i < 5; i++)
+		pid = fork();
+		if (pid == -1)
 		{
-			child = fork();
-			if (child == -1)
-			{
-				perror("Error creating child");
-				return (1);
-			}
-			if (child == 0)
-			{
-				printf("Zombie process created, PID: %u\n", getpid());
-				exit(0);
-			}
-			else
-			{
-				sleep(5);
-				continue;
-			}
-			infinite_while();
+			printf("Error creating child process\n");
+			return (1);
+		}
+		if (pid == 0)
+		{
+			printf("Zombie process created, PID: %u\n", getpid());
+			exit(0);
 		}
 	}
+	infinite_while();
 	return (0);
 }
