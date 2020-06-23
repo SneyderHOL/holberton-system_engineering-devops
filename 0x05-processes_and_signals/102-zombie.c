@@ -49,7 +49,7 @@ int main(void)
 			}
 			else
 			{
-				sleep(1);
+				sleep(5);
 				continue;
 			}
 			infinite_while();
