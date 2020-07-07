@@ -44,6 +44,6 @@ TCP/UDP
 
 3-UDP_and_TCP
 
-4-TCP_and_UPD_ports
+4-TCP_and_UDp_ports
 
 5-is_the_host_on_the_network
