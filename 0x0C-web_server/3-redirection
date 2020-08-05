@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Bash script that install, configure ngnix web server and redirection
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+old_line="server {"
+new_line="server {\n#rediction for /redirect_me\nrewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-\
+TGUlwu4;\n}\nserver {\n"
+sudo sed -i "s@$old_line@$new_line@" /etc/nginx/sites-available/default
+sudo service nginx start
