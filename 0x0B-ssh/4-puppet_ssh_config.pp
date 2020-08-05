@@ -1,6 +1,17 @@
 #create a SSH configuration file using puppet
-exec { 'adding lines to ssh_config file':
-  path     => '/etc/ssh/',
-  command  => 'echo -e "\nIdentityFile ~/.ssh/holberton\nPasswordAuthentication no\n" >> ssh_config',
-  provider => 'shell',
+file { '/etc/ssh/ssh_config':
+  ensure   => 'file',
+  path     => '/etc/ssh/ssh_config',
+  mode     => '0744',
+  owner    => 'root',
+  group    => 'root',
+  content  => "IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
+Host *
+SendEnv LANG LC_*
+HashKnownHosts yes
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials no
+",
+  provider => 'posix',
 }
