@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Bash script that install and configure ngnix web server
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo echo "Holberton School" | tee -a /var/www/html/index.html
+sudo echo "Holberton School" | tee /var/www/html/index.html
 sudo systemctl restart nginx
