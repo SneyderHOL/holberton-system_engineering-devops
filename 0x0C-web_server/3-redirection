@@ -3,8 +3,5 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo echo "Holberton School" | sudo tee /var/www/html/index.html
-old_line="server {"
-new_line="server {\n#rediction for /redirect_me\nrewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-\
-TGUlwu4;\n}\nserver {\n"
-sudo sed -i "s@$old_line@$new_line@" /etc/nginx/sites-available/default
+sudo sed -i "/# SSL configuration/ i rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 sudo service nginx start
