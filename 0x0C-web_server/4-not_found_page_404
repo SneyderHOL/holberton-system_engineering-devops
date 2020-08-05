@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Bash script that install, configure ngnix web server and redirection
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo sed -i "/# SSL configuration/ i rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/page_not_found.html
+sudo sed -i "/# SSL configuration/ i error_page 404 /page_not_found.html;" /etc/nginx/sites-available/default
+sudo service nginx start
