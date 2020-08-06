@@ -2,5 +2,4 @@
 #Debuggin a webstack
 sudo apt-get update
 sudo apt-get -y install apache2
-echo "Hello Holberton" > /var/www/html/index.html
 sudo service apache2 start
