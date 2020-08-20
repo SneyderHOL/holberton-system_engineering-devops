@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#using whoami command from another user
+su -c whoami $1
