@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module for making a request to an API"""
-import json
 import requests
 
 
@@ -12,6 +11,9 @@ def top_ten(subreddit):
     redirects = False
     request_subreddit = requests.get(url, headers=headers,
                                      allow_redirects=redirects)
-    subreddit_json = request_subreddit.json()
-    for title in subreddit_json['data']['children']:
-        print(title['data']['title'])
+    if request_subreddit.status_code == 200:
+        subreddit_json = request_subreddit.json()
+        for title in subreddit_json['data']['children']:
+            print(title['data']['title'])
+        return
+    print(None)
