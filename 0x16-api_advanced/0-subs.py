@@ -1,7 +1,6 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """Module for making a request to an API"""
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
